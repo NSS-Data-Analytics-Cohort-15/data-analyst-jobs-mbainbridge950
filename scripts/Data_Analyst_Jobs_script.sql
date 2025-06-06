@@ -107,3 +107,22 @@
 --AND title NOT LIKE '%analytics%';
 
 --4, Most have the word DATA in common
+
+--BONUS: You want to understand which jobs requiring SQL are hard to fill. Find the number of jobs by industry (domain) that require SQL and have been posted longer than 3 weeks.
+
+--SELECT  skill, domain, days_since_posting
+--FROM public.data_analyst_jobs
+--WHERE days_since_posting > 21
+--AND skill = 'SQL'
+--AND domain IS NOT NULL;
+
+-- 15, then 11 after Not Null
+
+--SELECT  skill, domain, days_since_posting
+--FROM public.data_analyst_jobs
+--WHERE days_since_posting > 21
+--AND skill = 'SQL'
+--AND domain IS NOT NULL
+--ORDER BY days_since_posting DESC;
+
+-- Majority are tied at 30

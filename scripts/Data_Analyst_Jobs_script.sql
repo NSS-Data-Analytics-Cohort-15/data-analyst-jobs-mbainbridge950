@@ -51,7 +51,7 @@
 --GROUP BY location
 --ORDER BY avg_rating DESC;
 
---Answer 46
+--Answer 46, Nebraska
 
 --7.  Select unique job titles from the data_analyst_jobs table. How many are there?
 
@@ -72,10 +72,10 @@
 
 --SELECT company, AVG(star_rating) AS avg_rating
 --FROM public.data_analyst_jobs
---WHERE review_count > 5000
+--WHERE review_count > 5000 AND company IS NOT NULL
 --GROUP BY company;
 
---41
+--40
 
 --10. Add the code to order the query in #9 from highest to lowest average star rating. Which company with more than 5000 reviews across all locations in the dataset has the highest star rating? What is that rating?
 
@@ -89,15 +89,15 @@
 
 --11. Find all the job titles that contain the word ‘Analyst’. How many different job titles are there?
 
---SELECT title
+--SELECT COUNT (DISTINCT (title))
 --FROM public.data_analyst_jobs
---WHERE title LIKE '%Analyst%';
+--WHERE title iLIKE '%Analyst%';
 
---1636
+--774
 
 --12.  How many different job titles do not contain either the word ‘Analyst’ or the word ‘Analytics’? What word do these positions have in common?
 
---SELECT title
+--SELECT DISTINCT(title)
 --FROM public.data_analyst_jobs
 --WHERE title NOT LIKE '%Analyst%'
 --AND title NOT LIKE '%Analytics%'
@@ -113,15 +113,17 @@
 --SELECT  skill, domain, days_since_posting
 --FROM public.data_analyst_jobs
 --WHERE days_since_posting > 21
---AND skill = 'SQL'
---AND domain IS NOT NULL;
+--AND skill LIKE 'SQL'
+--AND domain IS NOT NULL
+--GROUP BY domain
+--ORDER BY domain DESC;
 
--- 15, then 11 after Not Null
+-- 4
 
 --SELECT  skill, domain, days_since_posting
 --FROM public.data_analyst_jobs
 --WHERE days_since_posting > 21
---AND skill = 'SQL'
+--AND skill LIKE 'SQL'
 --AND domain IS NOT NULL
 --ORDER BY days_since_posting DESC;
 
